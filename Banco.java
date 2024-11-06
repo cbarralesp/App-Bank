@@ -13,8 +13,8 @@ public class Banco {
         Cliente cliente2 = new Cliente("María López", "98765432-1");
 
         // Crear cuentas
-        CuentaCorriente cuentaCorriente1 = new CuentaCorriente("1001", 5000);
-        CuentaAhorro cuentaAhorro2 = new CuentaAhorro("2001", 3000);
+        CuentaCorriente cuentaCorriente1 = new CuentaCorriente("1001", 10000);
+        CuentaAhorro cuentaAhorro2 = new CuentaAhorro("2001", 10000);
 
         // Asignar cuentas a clientes
         cliente1.setCuentaCorriente(cuentaCorriente1);
@@ -32,10 +32,10 @@ public class Banco {
     // Simula una transferencia entre cuentas
     public void simularTransferencia() {
         // Cliente Juan transfiere dinero a Cliente María
-        CuentaCorriente cuentaOrigen = (CuentaCorriente) cuentas.get("1000");
-        CuentaAhorro cuentaDestino = (CuentaAhorro) cuentas.get("2000");
+        CuentaCorriente cuentaOrigen = (CuentaCorriente) cuentas.get("1001");
+        CuentaAhorro cuentaDestino = (CuentaAhorro) cuentas.get("2001");
 
-        cuentaOrigen.transferir(5000, cuentaDestino);
+        cuentaOrigen.transferir(200, cuentaDestino);
     }
 
     // Muestra el estado actual del banco (clientes y sus cuentas)
@@ -46,4 +46,5 @@ public class Banco {
             cliente.mostrarCuentas();
         }
     }
+
 }
